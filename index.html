@@ -3,18 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-
-    <link rel="stylesheet" href="./css/style.css">
+    <title>ShopLite - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>
-<!--    HEADER-->
-    <header>
-        <nav>
+<body class="bg-gray-50 flex flex-col min-h-screen font-sans">
 
-        </nav>
-    </header>
+    <!--    HEADER-->
+    <nav class="bg-gray-900 text-white sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 shadow-md">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex space-x-7">
+                    <a href="index.html" class="flex items-center py-4 px-2">
+                        <span class="font-bold text-xl tracking-tight text-white">ShopLite</span>
+                    </a>
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="index.html" class="py-4 px-2 text-blue-400 border-b-4 border-blue-400 font-semibold">Home</a>
+                        <a href="register.html" class="py-4 px-2 text-gray-400 hover:text-blue-400 transition duration-300">Register</a>
+                    </div>
+                </div>
+                <div class="flex items-center shadow-sm">
+                    <a href="cart.html" class="relative py-2 px-4 bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700 transition">
+                        <i class="fas fa-shopping-cart text-gray-200 mr-1"></i> Cart
+                        <span id="cart-badge" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
 
     <main>
@@ -41,8 +59,10 @@
     </main>
 
     <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 DieuTTH4. All rights reserved.</p>
+    <footer class="bg-gray-900 text-gray-300 text-center py-6 mt-auto">
+        <div class="max-w-6xl mx-auto px-4">
+            <p>&copy; 2026 ShopLite. All rights reserved.</p>
+        </div>
     </footer>
 
 </body>
