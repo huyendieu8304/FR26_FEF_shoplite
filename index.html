@@ -42,23 +42,21 @@
         </div>
     </header>
 
+    <main class="max-w-6xl mx-auto px-4 flex-grow mb-12 w-full">
+        <!-- SEARCH AND FILTER -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <div>
+                <input type="text" id="search-input" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none" placeholder="Search products by name...">
+            </div>
+            <div>
+                <select id="category-filter" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-400 focus:outline-none">
+                    <option value="">All Categories</option>
+                </select>
+            </div>
         </section>
-
-<!--          TODO: SEARCH BAR-->
 
         <!-- PRODUCTS -->
-        <section>
-            <header> <!-- make the section has more clear semantic meaning -->
-                <h2>Our Products</h2>
-            </header>
-            <!-- Product grid -->
-            <article>
-
-            </article>
-
-        </section>
-
-
+        <section id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></section>
     </main>
 
     <!-- FOOTER -->
