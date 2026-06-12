@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopLite - Product Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen font-sans">
+<nav class="bg-gray-900 text-white sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between h-16 items-center">
+            <div class="flex space-x-7">
+                <a href="index.html" class="flex items-center py-4 px-2">
+                    <span class="font-bold text-xl text-white">ShopLite</span>
+                </a>
+            </div>
+            <div>
+                <a href="cart.html" class="relative py-2 px-4 bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700 transition">
+                    <i class="fas fa-shopping-cart text-gray-200 mr-1"></i> Cart
+                    <span id="cart-badge" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="max-w-4xl mx-auto px-4 flex-grow my-12 w-full">
+    <div id="loading" class="text-center my-12">
+        <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-blue-500 border-t-transparent"></div>
+    </div>
+    <div id="error-msg" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded text-center">Product not found!</div>
+
+    <section id="product-detail" class="hidden bg-white p-6 rounded-xl shadow-md grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div class="flex justify-center bg-white p-4 rounded-lg border border-gray-100">
+            <img id="detail-img" src="" alt="" class="max-h-96 object-contain">
+        </div>
+        <div>
+            <span id="detail-category" class="inline-block bg-gray-200 text-gray-700 text-xs px-2.5 py-1 rounded-full uppercase font-semibold tracking-wide mb-3"></span>
+            <h1 id="detail-title" class="text-2xl font-bold text-gray-800 mb-3"></h1>
+            <div class="flex items-center mb-4">
+                <span id="detail-rating" class="text-amber-500 font-bold mr-1"></span>
+                <i class="fas fa-star text-amber-500"></i>
+            </div>
+            <h3 id="detail-price" class="text-3xl font-extrabold text-red-600 mb-4"></h3>
+            <p id="detail-desc" class="text-gray-600 leading-relaxed mb-6"></p>
+            <button id="add-to-cart-btn" class="w-full md:w-auto bg-blue-600 text-white font-bold px-8 py-3 rounded-xl shadow hover:bg-blue-700 transition duration-200">
+                <i class="fas fa-cart-plus mr-2"></i> Add to Cart
+            </button>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-gray-900 text-gray-300 text-center py-6 mt-auto">
+    <p>&copy; 2026 ShopLite. All rights reserved.</p>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>
