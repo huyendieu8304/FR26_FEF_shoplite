@@ -108,3 +108,9 @@ searchInput.addEventListener('input', filterAndSearch);
 categoryFilter.addEventListener('change', filterAndSearch);
 
 document.addEventListener('DOMContentLoaded', initHome);
+
+//make sure init home always run again
+window.addEventListener('pageshow', function (event) {
+    // page reload or got from browser cache
+    initHome().then(r => {});
+});
