@@ -65,6 +65,7 @@ document.getElementById('register-form').addEventListener('submit', function (e)
     // pass all checks
     if (isValid) {
         document.getElementById('success-alert').classList.remove('hidden');
+        alert('Registration successful! Welcome to ShopLite.');
         document.getElementById('register-form').reset(); // Reset form
     }
 });
