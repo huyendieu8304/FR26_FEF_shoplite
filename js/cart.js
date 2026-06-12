@@ -6,6 +6,7 @@ function getCart() {
 //save cart to localStorage
 function saveCart(cart) {
     localStorage.setItem('shoplite_cart', JSON.stringify(cart));
+    updateCartBadge();
 }
 
 // add a product to cart
@@ -122,3 +123,16 @@ function attachCartEvents() {
 
 // render cart page
 document.addEventListener('DOMContentLoaded', renderCartPage);
+
+
+// update amount on Badge Navbar
+function updateCartBadge() {
+    const badge = document.getElementById('cart-badge');
+    if (!badge) return;
+    const cart = getCart();
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    badge.textContent = totalItems;
+}
+
+// update badge on cart right after load page successful
+document.addEventListener('DOMContentLoaded', updateCartBadge);
