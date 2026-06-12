@@ -22,8 +22,8 @@ async function initProductDetail() {
 }
 
 function showError() {
-    loadingEl.classList.add('d-none');
-    errorEl.classList.remove('d-none');
+    loadingEl.classList.add('hidden');
+    errorEl.classList.remove('hidden');
 }
 
 function renderDetail(prod) {
@@ -35,8 +35,8 @@ function renderDetail(prod) {
     document.getElementById('detail-desc').textContent = prod.description;
     document.getElementById('detail-rating').textContent = `${prod.rating?.rate || 0} / 5`;
 
-    loadingEl.classList.add('d-none');
-    detailContainer.classList.remove('d-none');
+    loadingEl.classList.add('hidden');
+    detailContainer.classList.remove('hidden');
 }
 
 // Add to cart

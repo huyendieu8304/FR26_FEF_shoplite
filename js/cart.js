@@ -1,3 +1,12 @@
+// update amount on Badge Navbar
+function updateCartBadge() {
+    const badge = document.getElementById('cart-badge');
+    if (!badge) return;
+    const cart = getCart();
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    badge.textContent = totalItems;
+}
+
 // get cảt from localStorage
 function getCart() {
     return JSON.parse(localStorage.getItem('shoplite_cart')) || [];
@@ -121,18 +130,17 @@ function attachCartEvents() {
     });
 }
 
-// render cart page
-document.addEventListener('DOMContentLoaded', renderCartPage);
+document.addEventListener('DOMContentLoaded', () => {
+    // update badge on cart right after load page successful
+    updateCartBadge();
 
+    // if in cart.html. render cart page
+    if (itemsContainer) {
+        renderCartPage();
+    }
+});
 
-// update amount on Badge Navbar
-function updateCartBadge() {
-    const badge = document.getElementById('cart-badge');
-    if (!badge) return;
-    const cart = getCart();
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    badge.textContent = totalItems;
-}
+// document.addEventListener('DOMContentLoaded', updateCartBadge);
+//
+// document.addEventListener('DOMContentLoaded', renderCartPage);
 
-// update badge on cart right after load page successful
-document.addEventListener('DOMContentLoaded', updateCartBadge);

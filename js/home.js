@@ -16,13 +16,23 @@ async function initHome() {
 
         allProducts = products;
 
-        renderCategories(categories);
-        renderProducts(allProducts);
+        if (categoryFilter && categories) {
+            renderCategories(categories);
+        }
 
-        loadingEl.classList.add('d-none');
+        if (gridEl && allProducts) {
+            renderProducts(allProducts);
+        }
+
     } catch (err) {
-        loadingEl.classList.add('d-none');
-        errorEl.classList.remove('d-none');
+        if (errorEl) {
+            errorEl.classList.remove('hidden');
+        }
+    } finally {
+        // success or not,  hidden loading
+        if (loadingEl) {
+            loadingEl.classList.add('hidden');
+        }
     }
 }
 
@@ -67,7 +77,14 @@ function renderProducts(products) {
         btn.addEventListener('click', (e) => {
             const pId = parseInt(e.target.getAttribute('data-id'));
             const productFound = allProducts.find(p => p.id === pId);
-            if (productFound) addToCart(productFound);
+            if (productFound) {
+                // check whether the function exist
+                if (typeof addToCart === 'function') {
+                    addToCart(productFound);
+                } else {
+                    alert(`Product: ${productFound.title} (Can not connect to server to get product's details)`);
+                }
+            }
         });
     });
 }
