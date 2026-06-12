@@ -55,6 +55,15 @@
             </div>
         </section>
 
+        <!-- LOADING... -->
+        <div id="loading" class="text-center my-12">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-blue-500 border-t-transparent"></div>
+            <p class="mt-2 text-gray-600">Loading products...</p>
+        </div>
+        <div id="error-msg" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded text-center" role="alert">
+            Failed to load products. Please try again later!
+        </div>
+
         <!-- PRODUCTS -->
         <section id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></section>
     </main>
@@ -66,5 +75,7 @@
         </div>
     </footer>
 
+<script src="js/api.js"></script>
+<script src="js/home.js"></script>
 </body>
 </html>
