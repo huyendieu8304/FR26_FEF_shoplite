@@ -39,4 +39,11 @@ function renderDetail(prod) {
     detailContainer.classList.remove('d-none');
 }
 
+// Add to cart
+document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+    if (currentProduct) {
+        addToCart(currentProduct);
+    }
+});
+
 document.addEventListener('DOMContentLoaded', initProductDetail);
