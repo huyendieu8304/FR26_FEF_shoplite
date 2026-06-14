@@ -2,7 +2,7 @@
 
 ShopLite is a fully responsive, client-side multi-page shopping website built for the Front-End Foundations (FEF) assignment. The application runs entirely on the browser, fetching product data dynamically from the public `FakeStoreAPI` and managing persistent state (shopping cart) locally using `localStorage`.
 
-- **Deployment Link:** [Click here to view the live demo](https://huyendieu8304.github.io/FR26_FEF_shoplite/)
+- **Deployment Link:** [Click here to view the live demo](https://shoplite.hvh.homes/)
 - **Repository Link:** [https://github.com/huyendieu8304/FR26_FEF_shoplite](https://github.com/huyendieu8304/FR26_FEF_shoplite)
 
 ---
